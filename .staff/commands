@@ -2,6 +2,11 @@
 Ctrl + B - скрывать боковую панель
 
 # Git
+
+## перейти к нужному комиту
+git log --graph --all --oneline
+git checkout <хеш комита>
+
 # ветки
 git branch new_branch      # создать новую ветку с указанным именем на текущем коммите
 git checkout new_branch    # перейти в указанную ветку
@@ -20,9 +25,6 @@ git pull
 git log --graph --all --oneline
 git reset <номер комита>
 git push --force
-## перейти к нужному комиту
-git log --graph --all --oneline
-git checkout <хеш комита>
 ## откат гитгноре
 git rm -r --cached .idea
 git add .gitignore

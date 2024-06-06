@@ -1,0 +1,13 @@
+.profile {
+  display: flex;
+}
+
+.ava img {
+  width: 150px;
+  height: auto;
+  padding: 10px;
+}
+
+.description p {
+  line-height: 0.5;
+}

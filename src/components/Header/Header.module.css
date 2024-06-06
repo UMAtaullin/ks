@@ -1,9 +1,10 @@
 .header {
     grid-area: h;
-    background-color: yellowgreen;
 }
 
 .logo {
     font-size: 24px;
+    font-weight: 700;
     color: green;
+    padding: 15px;
 }
