@@ -1,0 +1,19 @@
+.nav {
+    grid-area: n;
+    background-color: powderblue;
+}
+
+.nav a {
+  line-height: 3;
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.lastItem {
+  padding-top: 40px;
+}
+
+.nav a:focus {
+  color:green;
+}
