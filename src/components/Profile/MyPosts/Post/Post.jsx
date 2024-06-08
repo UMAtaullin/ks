@@ -2,6 +2,7 @@ import React from 'react';
 import cls from './Post.module.css'
 
 const Post = (props) => {
+  debugger
   return (
     <div className={cls.posts}>
       <div className={cls.ava}>
@@ -10,8 +11,10 @@ const Post = (props) => {
           alt='Ava'
         />
       </div>
-      <div className={cls.message}>Do not repeat yourself</div>
-      <div className={cls.like}><span>like</span>
+      <div className={cls.message}>{props.message}</div>
+      <div className={cls.like}>
+        <span>likes</span>
+        {props.like}
       </div>
     </div>
   )
