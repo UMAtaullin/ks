@@ -1,0 +1,19 @@
+.dialogs_page {
+  padding: 20px 0;
+  width: 888px;
+  display: grid;
+  grid-template-areas:
+    'd m';
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogs_item {
+  grid-area: d;
+  background-color: #7cdd0d;
+}
+
+.messages_item {
+  grid-area: m;
+  background-color: #1a6ae0;
+}
