@@ -6,7 +6,11 @@ const MyPosts = () => {
   let postData = [
     { id: 1, message: 'Hi, it is my first post', like: 5 },
     { id: 2, message: 'That is what is new in my life today', like: 14 },
+    { id: 3, message: 'Thanks a lot', like: 117 },
   ]
+  let postElement = postData.map((el) => (
+    <Post message={el.message} like={el.like} />
+  ))
   return (
     <div className={cls.new}>
       New post
@@ -17,8 +21,7 @@ const MyPosts = () => {
       </div>
       <div className={cls.my}>My posts</div>
       <div className='posts'>
-        <Post message={postData[0].message} like={postData[0].like} />
-        <Post message={postData[1].message} like={postData[0].like} />
+        {postElement}
       </div>
     </div>
   )
