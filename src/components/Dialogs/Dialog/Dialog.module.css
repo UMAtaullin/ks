@@ -1,0 +1,12 @@
+.dialog {
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: #7cdd0d;
+  border: 2px solid rgb(8, 77, 226);
+  border-radius: 9px;
+}
+
+.dialog a:focus {
+  color: rgb(5, 85, 235);
+}

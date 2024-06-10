@@ -8,12 +8,10 @@
   grid-template-columns: 2fr 10fr;
 }
 
-.dialogs_item {
+.dialogs {
   grid-area: d;
-  background-color: #7cdd0d;
 }
 
-.messages_item {
+.messages {
   grid-area: m;
-  background-color: #1a6ae0;
 }
