@@ -3,11 +3,12 @@ import cls from './Profile.module.css'
 import MyPosts from './MyPosts/MyPosts'
 import MyInfo from './MyInfo/MyInfo'
 
-const Profile = () => {
+const Profile = (props) => {
+
   return (
     <div className={cls.content}>
-      <MyInfo/>
-      <MyPosts/>
+      <MyInfo />
+      <MyPosts {...props} />
     </div>
   )
 }

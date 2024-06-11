@@ -5,15 +5,16 @@ import Nav from './components/Nav/Nav';
 import { Routes, Route } from 'react-router-dom';
 import Profile from './components/Profile/Profile';
 
-function App() {
+
+const App = (props) => {
   return (
     <div className="App">
       <Header/>
       <Nav/>
       <div className='App-content'>
         <Routes>
-          <Route path='/dialogs/' element={<Dialogs/>}/>
-          <Route path='/profile/' element={<Profile/>}/>
+          <Route path='/profile/' element={<Profile {...props} />}/>
+          <Route path='/dialogs/' element={<Dialogs {...props} />}/>
         </Routes>
       </div>
     </div>
