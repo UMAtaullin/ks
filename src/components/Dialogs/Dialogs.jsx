@@ -6,10 +6,12 @@ import Message from './Message/Message'
 const Dialogs = (props) => {
 
   let dialogElement = props.names.map((el) => (
-    <Dialog name={el.name} id={el.id} />))
+    <Dialog name={el.name} id={el.id} />
+  ))
 
   let messageElement = props.messages.map((el) => (
-    <Message message={el.message} />))
+    <Message message={el.message} />
+  ))
 
   return (
     <div className={cls.dialogs_page}>
