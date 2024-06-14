@@ -1,6 +1,7 @@
 import React from 'react';
 import cls from './MyInfo.module.css'
 
+
 const MyInfo = () => {
   return (
     <div className={cls.profile}>

@@ -9,17 +9,25 @@ const MyPosts = (props) => {
   ))
 
   return (
-    <div className={cls.new}>
+    <div className='myPosts'>
       New post
-      <div className={cls.area}>
-        <textarea></textarea>
-        <button>Add post</button>
-        <button>Delete</button>
+      <div className={cls.posts}>
+        <div className={cls.new}>
+          <textarea className={cls.text}></textarea>
+        </div>
+        <div className={cls.btn}>
+          <button 
+          onClick={() => {alert('Добавить сообщение?')}}
+          className={cls.add}>
+            Add post
+          </button>
+          <button 
+          onClick={()=>{alert('Удалить сообщение?')}}
+          className={cls.delete}>Delete</button>
+        </div>
       </div>
       <div className={cls.my}>My posts</div>
-      <div className='posts'>
-        {postElement}
-      </div>
+      <div className='posts'>{postElement}</div>
     </div>
   )
 }
