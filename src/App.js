@@ -12,10 +12,13 @@ const App = (props) => {
       <Nav/>
       <div className='App-content'>
         <Routes>
-          <Route path='/profile/' element={<Profile 
+          <Route path='/profile/' 
+          element={<Profile 
+            addPost={props.addPost}
             posts={props.profilePage.postData} 
             />}/>
-          <Route path='/dialogs/' element={<Dialogs 
+          <Route path='/dialogs/' 
+          element={<Dialogs 
             names={props.messagesPage.dialogData}
             messages={props.messagesPage.messageData}
             />}/>

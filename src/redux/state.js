@@ -1,3 +1,5 @@
+import { rerenderTree } from '..'
+
 let state = {
   profilePage: {
     postData: [
@@ -17,7 +19,15 @@ let state = {
       { id: 2, message: 'Ничего не делала, но очень устала' },
       { id: 3, message: 'Без понятия что сказать' },
     ],
+  },
+  sidebar: {}
 }
-}
+
+export const addPost = (postMessage) => {
+  debugger
+  let newPost = {id:4, message: postMessage, like: 0}
+  state.profilePage.postData.push(newPost)
+  rerenderTree(state)
+  }
 
 export default state

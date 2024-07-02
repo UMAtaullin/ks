@@ -4,19 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-import state from './redux/state'
+import state, { addPost } from './redux/state'
 
+export const rerenderTree = () => {
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App 
+        addPost={addPost}
+        profilePage={state.profilePage} 
+        messagesPage={state.messagesPage} />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+}
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App 
-      profilePage={state.profilePage} 
-      messagesPage={state.messagesPage} />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+rerenderTree()
 
 reportWebVitals();
