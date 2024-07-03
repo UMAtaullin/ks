@@ -7,6 +7,7 @@ let state = {
       { id: 2, message: 'That is what is new in my life today', like: 14 },
       { id: 3, message: 'Thanks a lot', like: 117 },
     ],
+    newText: ''
   },
   messagesPage: {
     dialogData: [
@@ -23,11 +24,19 @@ let state = {
   sidebar: {}
 }
 
-export const addPost = (postMessage) => {
-  debugger
-  let newPost = {id:4, message: postMessage, like: 0}
+window.state = state
+
+export const changePost = (inputText) => {
+  state.profilePage.newText = inputText
+  rerenderTree(state)
+}
+
+export const addPost = () => {
+  let newPost = {id:4, message: state.profilePage.newText, like: 0}
   state.profilePage.postData.push(newPost)
+  state.profilePage.newText = ''
   rerenderTree(state)
   }
+
 
 export default state
