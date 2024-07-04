@@ -1,4 +1,5 @@
-import { rerenderTree } from '..'
+let rerenderTree = () => console.log('State was change')
+export const subscribe = (observer) => rerenderTree = observer
 
 let state = {
   profilePage: {
@@ -37,6 +38,5 @@ export const addPost = () => {
   state.profilePage.newText = ''
   rerenderTree(state)
   }
-
 
 export default state

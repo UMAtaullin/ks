@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-import state, { addPost, changePost } from './redux/state'
+import state, { addPost, changePost, subscribe } from './redux/state'
 
-export const rerenderTree = () => {
+export const rerenderTree = (state) => {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <React.StrictMode>
@@ -21,6 +21,8 @@ export const rerenderTree = () => {
   );
 }
 
-rerenderTree()
+rerenderTree(state)
+
+subscribe(rerenderTree)
 
 reportWebVitals();
