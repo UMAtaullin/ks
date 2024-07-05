@@ -4,25 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-import state, { addPost, changePost, subscribe } from './redux/state'
+import store from './redux/state'
 
-export const rerenderTree = (state) => {
+const rerenderTree = () => {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <React.StrictMode>
       <BrowserRouter>
         <App 
-        changePost={changePost}
-        addPost={addPost}
-        profilePage={state.profilePage} 
-        messagesPage={state.messagesPage} />
+        dispatch={store.dispatch.bind(store)}
+        // changePost={store.changePost.bind(store)}
+        // addPost={store.addPost.bind(store)}
+        profilePage={store.getState().profilePage} 
+        messagesPage={store.getState().messagesPage} />
       </BrowserRouter>
     </React.StrictMode>
   );
-}
+} 
 
-rerenderTree(state)
+rerenderTree()
 
-subscribe(rerenderTree)
+store.subscribe(rerenderTree)
 
 reportWebVitals();

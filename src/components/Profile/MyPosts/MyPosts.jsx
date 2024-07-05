@@ -6,9 +6,12 @@ const MyPosts = (props) => {
 
   let newPostEl = React.createRef()
   
-  const onPostChange = () => props.changePost(newPostEl.current.value)
+  const onPostChange = () => {
+    let text = newPostEl.current.value
+    props.dispatch({type: 'CHANGE_POST', inputText:  text})
+  }
 
-  const AddPost = () => props.addPost()
+  const AddPost = () => props.dispatch({type: 'ADD_POST'})
   
 
   let postElement = props.posts.map((el) => (

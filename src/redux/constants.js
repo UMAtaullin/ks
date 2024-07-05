@@ -1,0 +1,4 @@
+export const CHANGE_POST = 'CHANGE_POST'
+export const ADD_POST = 'ADD_POST'
+export const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
+export const SEND_MESSAGE = 'SEND_MESSAGE'
