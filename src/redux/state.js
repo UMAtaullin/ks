@@ -28,16 +28,6 @@ const store = {
   subscribe(observer) {this._rerenderTree = observer},
   getState() {return this._state},
 
-  // changePost(inputText) {
-  //   this._state.profilePage.newText = inputText
-  //   this._rerenderTree()
-  // },
-  // addPost() {
-  //   let newPost = { id: 4, message: this._state.profilePage.newText, like: 0 }
-  //   this._state.profilePage.postData.push(newPost)
-  //   this._state.profilePage.newText = ''
-  //   this._rerenderTree()
-  // },
   dispatch(action) {
     debugger
     if (action.type === CHANGE_POST) {
@@ -51,6 +41,11 @@ const store = {
     }
   }
 }
-window.store = store
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const onPostChangeActionCreator = (text) => 
+  ({type: CHANGE_POST, inputText: text})
+
 export default store
 

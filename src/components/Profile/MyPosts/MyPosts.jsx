@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from './Post/Post'
 import cls from './MyPosts.module.css'
+import { addPostActionCreator, onPostChangeActionCreator } from '../../../redux/state'
 
 const MyPosts = (props) => {
 
@@ -8,10 +9,11 @@ const MyPosts = (props) => {
   
   const onPostChange = () => {
     let text = newPostEl.current.value
-    props.dispatch({type: 'CHANGE_POST', inputText:  text})
+    let action = onPostChangeActionCreator(text)
+    props.dispatch(action)
   }
 
-  const AddPost = () => props.dispatch({type: 'ADD_POST'})
+  const addPost = () => props.dispatch(addPostActionCreator())
   
 
   let postElement = props.posts.map((el) => (
@@ -33,7 +35,7 @@ const MyPosts = (props) => {
 
         <div className={cls.btn}>
           <button 
-            onClick={AddPost} 
+            onClick={addPost} 
             className={cls.add}>
               Add post
           </button>
