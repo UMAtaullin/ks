@@ -1,4 +1,4 @@
-import { ADD_POST, CHANGE_POST } from './constants'
+import { ADD_POST, CHANGE_POST, NEW_MESSAGE, SEND_MESSAGE } from './constants'
 
 const store = {
   _state: {
@@ -21,6 +21,7 @@ const store = {
         { id: 2, message: 'Ничего не делала, но очень устала' },
         { id: 3, message: 'Без понятия что сказать' },
       ],
+      newMessage: ''
     },
     sidebar: {}
   },
@@ -38,14 +39,27 @@ const store = {
       this._state.profilePage.postData.push(newPost)
       this._state.profilePage.newText = ''
       this._rerenderTree()
+    } else if (action.type === NEW_MESSAGE) {
+      this._state.messagesPage.newMessage = action.inputText
+      this._rerenderTree()
+    } else if (action.type === SEND_MESSAGE) {
+      let newMessage = {id: 5, message: this._state.messagesPage.newMessage}
+      this._state.messagesPage.messageData.push(newMessage)
+      this._state.messagesPage.newMessage = ''
+      this._rerenderTree()
     }
   }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
-
 export const onPostChangeActionCreator = (text) => 
   ({type: CHANGE_POST, inputText: text})
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const onNewMessageCreator = (text) => 
+  ({type: NEW_MESSAGE, inputText: text})
+
+export const onSendMessageCreator = () => ({type: SEND_MESSAGE})
 
 export default store
 
