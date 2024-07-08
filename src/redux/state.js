@@ -1,4 +1,5 @@
-import { ADD_POST, CHANGE_POST, NEW_MESSAGE, SEND_MESSAGE } from './constants'
+import messagesReducer from './messages-reducer'
+import profileReducer from './profile-reduce'
 
 const store = {
   _state: {
@@ -30,36 +31,20 @@ const store = {
   getState() {return this._state},
 
   dispatch(action) {
-    debugger
-    if (action.type === CHANGE_POST) {
-      this._state.profilePage.newText = action.inputText
-      this._rerenderTree()
-    } else if (action.type === ADD_POST) {
-      let newPost = { id: 4, message: this._state.profilePage.newText, like: 0 }
-      this._state.profilePage.postData.push(newPost)
-      this._state.profilePage.newText = ''
-      this._rerenderTree()
-    } else if (action.type === NEW_MESSAGE) {
-      this._state.messagesPage.newMessage = action.inputText
-      this._rerenderTree()
-    } else if (action.type === SEND_MESSAGE) {
-      let newMessage = {id: 5, message: this._state.messagesPage.newMessage}
-      this._state.messagesPage.messageData.push(newMessage)
-      this._state.messagesPage.newMessage = ''
-      this._rerenderTree()
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action)
+    this._state.messagesPage = messagesReducer(this._state.messagesPage, action)
+    this._rerenderTree()
+    // if (action.type === NEW_MESSAGE) {
+    //   this._state.messagesPage.newMessage = action.inputText
+    //   this._rerenderTree()
+    // } else if (action.type === SEND_MESSAGE) {
+    //   let newMessage = {id: 5, message: this._state.messagesPage.newMessage}
+    //   this._state.messagesPage.messageData.push(newMessage)
+    //   this._state.messagesPage.newMessage = ''
+    //   this._rerenderTree()
+    // }
   }
 }
-
-export const onPostChangeActionCreator = (text) => 
-  ({type: CHANGE_POST, inputText: text})
-
-export const addPostActionCreator = () => ({type: ADD_POST})
-
-export const onNewMessageCreator = (text) => 
-  ({type: NEW_MESSAGE, inputText: text})
-
-export const onSendMessageCreator = () => ({type: SEND_MESSAGE})
 
 export default store
 
