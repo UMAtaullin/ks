@@ -1,6 +1,15 @@
 import { ADD_POST, CHANGE_POST } from './constants'
 
-const profileReducer = (state, action) => {
+let initialState = {
+  postData: [
+    { id: 1, message: 'Hi, it is my first post', like: 5 },
+    { id: 2, message: 'That is what is new in my life today', like: 14 },
+    { id: 3, message: 'Thanks a lot', like: 117 },
+  ],
+  newText: ''
+}
+
+const profileReducer = (state=initialState, action) => {
   if (action.type === CHANGE_POST) {
     state.newText = action.inputText
   } else if (action.type === ADD_POST) {

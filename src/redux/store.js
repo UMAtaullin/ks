@@ -34,15 +34,6 @@ const store = {
     this._state.profilePage = profileReducer(this._state.profilePage, action)
     this._state.messagesPage = messagesReducer(this._state.messagesPage, action)
     this._rerenderTree()
-    // if (action.type === NEW_MESSAGE) {
-    //   this._state.messagesPage.newMessage = action.inputText
-    //   this._rerenderTree()
-    // } else if (action.type === SEND_MESSAGE) {
-    //   let newMessage = {id: 5, message: this._state.messagesPage.newMessage}
-    //   this._state.messagesPage.messageData.push(newMessage)
-    //   this._state.messagesPage.newMessage = ''
-    //   this._rerenderTree()
-    // }
   }
 }
 
