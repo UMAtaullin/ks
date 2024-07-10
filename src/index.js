@@ -12,8 +12,9 @@ const rerenderTree = () => {
     <React.StrictMode>
       <BrowserRouter>
         <App 
+        store={store}
         dispatch={store.dispatch.bind(store)}
-        profilePage={store.getState().profilePage} 
+        // profilePage={store.getState().profilePage} 
         messagesPage={store.getState().messagesPage} />
       </BrowserRouter>
     </React.StrictMode>

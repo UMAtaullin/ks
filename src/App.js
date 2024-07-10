@@ -1,9 +1,10 @@
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs'
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import { Routes, Route } from 'react-router-dom';
 import Profile from './components/Profile/Profile';
+import DialogsContainer from './components/Dialogs/DialogsContainer'
+
 
 const App = (props) => {
   return (
@@ -14,12 +15,13 @@ const App = (props) => {
         <Routes>
           <Route path='/profile/' 
           element={<Profile 
-            dispatch={props.dispatch}
-            newText={props.profilePage.newText}
-            posts={props.profilePage.postData} 
+            store={props.store}
+            // dispatch={props.dispatch}
+            // newText={props.profilePage.newText}
+            // postData={props.profilePage.postData} 
             />}/>
           <Route path='/dialogs/' 
-          element={<Dialogs 
+          element={<DialogsContainer
             dispatch={props.dispatch}
             newMessage={props.messagesPage.newMessage}
             names={props.messagesPage.dialogData}
