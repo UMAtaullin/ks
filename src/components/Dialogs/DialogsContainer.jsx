@@ -1,26 +1,26 @@
 import React from 'react'
-import { onNewMessageCreator, onSendMessageCreator } from '../../redux/messages-reducer'
+import { newMessageAction, sendMessageAction } from '../../redux/messages-reducer'
 import Dialogs from './Dialogs'
 
 const DialogsContainer = (props) => {
+
+  let state = props.store.getState()
  
   const changeMessage = (text) => {
-    let action = onNewMessageCreator(text)
-    props.dispatch(action)
+    props.store.dispatch(newMessageAction(text))
   }
 
   const sendMessage = () => {
-    let action = onSendMessageCreator()
-    props.dispatch(action)
+    props.store.dispatch(sendMessageAction())
   }
 
   return (
     <Dialogs
       changeMessage={changeMessage}
       sendMessage={sendMessage}
-      newMessage={props.newMessage}
-      names={props.names}
-      messages={props.messages}
+      newMessage={state.messagesPage.newMessage}
+      names={state.messagesPage.dialogData}
+      messages={state.messagesPage.messageData}
     />
   )
 }

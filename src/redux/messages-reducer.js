@@ -25,9 +25,9 @@ const messagesReducer = (state=initialState, action) => {
   return state
 }
 
-export const onNewMessageCreator = (text) =>
+export const newMessageAction = (text) =>
   ({ type: NEW_MESSAGE, inputText: text })
 
-export const onSendMessageCreator = () => ({ type: SEND_MESSAGE })
+export const sendMessageAction = () => ({ type: SEND_MESSAGE })
 
 export default messagesReducer

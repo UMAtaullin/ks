@@ -22,10 +22,11 @@ const App = (props) => {
             />}/>
           <Route path='/dialogs/' 
           element={<DialogsContainer
-            dispatch={props.dispatch}
-            newMessage={props.messagesPage.newMessage}
-            names={props.messagesPage.dialogData}
-            messages={props.messagesPage.messageData}
+            store={props.store}
+            // dispatch={props.dispatch}
+            // newMessage={props.messagesPage.newMessage}
+            // names={props.messagesPage.dialogData}
+            // messages={props.messagesPage.messageData}
             />}/>
         </Routes>
       </div>
