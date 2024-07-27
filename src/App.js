@@ -15,18 +15,11 @@ const App = (props) => {
         <Routes>
           <Route path='/profile/' 
           element={<Profile 
-            store={props.store}
-            // dispatch={props.dispatch}
-            // newText={props.profilePage.newText}
-            // postData={props.profilePage.postData} 
+            // store={props.store}
             />}/>
           <Route path='/dialogs/' 
           element={<DialogsContainer
-            store={props.store}
-            // dispatch={props.dispatch}
-            // newMessage={props.messagesPage.newMessage}
-            // names={props.messagesPage.dialogData}
-            // messages={props.messagesPage.messageData}
+            // store={props.store}
             />}/>
         </Routes>
       </div>
