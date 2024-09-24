@@ -1,8 +1,8 @@
 .App {
-  margin: 0 auto;
   display: grid;
-  max-width: 1280px;
-  min-height: 720px;
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto;
 
   grid-template-areas:
     'h h'
